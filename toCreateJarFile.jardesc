@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jardesc>
+    <jar path="C:/Users/Admin/Desktop/EngCoach/EngCoach2.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/EngCoach/toCreateJarFile.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="true" mainClassHandleIdentifier="=EngCoach/src&lt;com.services{EngCoachGUI.java[EngCoachGUI" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <javaElement handleIdentifier="=EngCoach/src&lt;com.services{FastTrainGUI.java"/>
+        <javaElement handleIdentifier="=EngCoach/src&lt;com.services{AddNewContentGUI.java"/>
+        <javaElement handleIdentifier="=EngCoach/src&lt;com.services{EngCoachGUI.java"/>
+        <javaElement handleIdentifier="=EngCoach/src&lt;com.services{AddNewContent.java"/>
+        <javaElement handleIdentifier="=EngCoach/src&lt;com.services{FastTrain.java"/>
+        <file path="/EngCoach/.classpath"/>
+        <javaElement handleIdentifier="=EngCoach/src&lt;com.services{ContentHandler.java"/>
+        <file path="/EngCoach/.project"/>
+        <javaElement handleIdentifier="=EngCoach/src&lt;com.services{EngCoach.java"/>
+    </selectedElements>
+</jardesc>

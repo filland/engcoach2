@@ -1,0 +1,16 @@
+#A new section was added
+#Thu Oct 12 19:30:26 MSK 2017
+pathToPronunciationDictionary=pronunciation dictionary.txt
+jar=false
+pathToDecodedSounds=decoding of sound acronyms
+section8=new section
+section7=Questions
+section6=My sentences
+section5=Phrasal verbs
+section4=Other sentences
+section3=Introd & others
+icon=icon.png
+section2=Words
+section1=All together
+sections=8
+path=EngMaterials.txt

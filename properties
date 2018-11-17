@@ -1,0 +1,16 @@
+#The name of a section was changed
+#Fri Oct 13 16:10:04 MSK 2017
+pathToPronunciationDictionary=pronunciation dictionary.txt
+jar=false
+pathToDecodedSounds=decoding of sound acronyms
+section8=Section \!\!\!
+section7=Questions
+section6=My sentences
+section5=Phrasal verbs
+section4=Other sentences
+section3=Introd & others
+icon=icon.png
+section2=Words
+section1=All together
+sections=8
+path=EngMaterials.txt

@@ -1,0 +1,241 @@
+$1
+
+
+
+behind - позади, сзади
+turn - о.и. поворачиваться
+seize (grab) - хватать
+turn round - обернуться
+run away - убегать
+climb - взбираться, подниматься
+disappear - исчезать
+punish - наказание, наказывать
+find - находить
+while - в то время как
+steal - красть
+enough - достаточно
+instead - вместо
+as soon as, once - как только
+forget - забывать
+trouble - неприятности
+own - собственный
+finally - наконец
+roll - катить
+tear - разрывать
+throw - бросать
+chase - гнаться
+gate - ворота
+at least - как минимум
+enemy - враг
+through - сквозь
+immediately, instantly - немедленно
+enjoy - наслаждаться
+bring - приносить
+seem - казаться
+shake - трясти
+notice - замечать
+take, take up - брать
+along - вдоль
+try - пытаться
+afraid - бояться
+joke - шутить
+remain - оставаться
+valuable - ценный
+add - добавлять
+already - уже
+decide - решать
+prefer - предпочитать
+prepare - готовиться
+count - считать
+choose - выбирать
+pass by -проходить мимо
+yard - двор
+silly - глупый
+attention - внимание
+return - возвращаться
+offend - обижаться
+accuse - обвинять
+cut - резать
+worth - стоимость
+care - забота, заботиться
+put on - надевать
+soon - вскоре
+whole - целый
+become - становиться
+rich, wealthy - богатый
+however - однако
+pay - платить
+such - такой
+lead - вести
+whom - кого
+in a word - одним словом
+relative - родственник
+several - несколько
+expect - ожидаемый
+doubt - сомнение, сомневаться
+demand(claim) - требовать
+those - те
+middle - середина
+some day - когда-нибудь
+sink(drown) - тонуть
+miserable - несчастный
+suffer - страдать
+wish - желать
+invent - изобретать
+suddenly - неожиданно
+wake - будить
+hurt - боль, причинять боль
+pull - тянуть
+hang - висеть, вешать
+church - церковь
+cure - лечить
+bury - хоронить
+midnight - полночь
+follow (me) - следовать (за кем то)
+consider - полагать, считать
+hide - скрывать
+justice - справедливость
+murder - убийство
+unfortunately - к сожалению
+mention - упоминать
+refuse - отказываться
+below - ниже
+mean - иметь ввиду, значить
+noon- полдень
+advantage - преимущество
+dense - густой
+fill - заполнять
+tremble(shive) - дрожать
+send - отправлять
+arm - рука
+nearly - почти
+hardly - едва
+recognize - узнавать
+carry - нести
+rope - веревка
+spade - лопата
+against - против
+swear - клянуться
+revenge on (on, for) - месть, мстить (on - кому_л, for - за что_л)
+drop, fell - падать
+score - счет, рекорд
+honest - честный
+terrible - ужасный
+knees - колени
+fail - неудача, терпеть неудачу
+toward - в сторону, к
+deep - глубоко
+both - оба
+brag - хвастаться
+ever - когда либо, всегда
+scare - пугать
+loud - громко
+still - все еще
+belong to - пренадлежать
+crowd - толпа
+disturb - беспокоить, нарушать
+despite- несмотря на
+offer, suggest - предлагать
+kind - своего рода; добрый; вид,тип
+pour - наливать
+cheeks - щеки
+dig - рыть
+also - так же
+supply - снабжать
+boat - лодка
+generous - щедрый
+guilty - виновный
+camp - лагерь
+
+
+
+$2
+
+
+ever - всегда, вечно, неизменно, когда_либо
+Monday - понедельник
+Tuesday - вторник
+Wednesday - среда
+Thursday - четверг
+Friday - пятница
+Saturday - суббота
+Sunday - воскресенье
+etc. - и так далее
+
+
+
+$3
+
+
+Do you accept credit cards?- Вы принимаете кредитные карточки?
+Give me the key for room number eleven, please-	Дайте мне, пожалуйста, ключи от комнаты номер одиннадцать
+May I leave these valuables at the hotel safe?- Могу ли я оставить эти ценные вещи в сейфе отеля?
+We are leaving tomorrow-	Мы уезжаем завтра
+How can I get to the city center?- Как я могу добраться до центра города?
+Which restaurant would you recommend?- Какой ресторан Вы бы порекомендовали?
+I would like to see the local sights-	Я хотела бы осмотреть местные достопримечательности
+
+
+
+$4
+
+
+be over - проходить (выборы прошли)
+pass on - передават дальше
+bring up - воспитывать
+apply for/to - обрашаться с просьбой
+pop up - выскакивать (окно в браузере)
+poke in/at/into - совать, пихать, тыкать
+worry about - волноваться о чем/ком
+
+
+
+$5
+
+
+Are they from Italy? - Они из Италии?
+I am a teacherю My goal is teaching children - Я учитель. Моя задача учить детей
+It is a beautiful day - Красивый день
+The weather is not snowy but rainy - Погода дождливая, но без снега (?)
+Am I late for the film? - Я опоздал на фильм?
+Are you ready to leave? - Вы готовы уходить?
+
+
+
+$6
+
+
+Do you think that Australian Eng is a cross between Amer and Brit Eng? - Ты думаешь, что Австралийский англ это нечто среднее между Америк и Брит английским?
+Can you pull the sink away? - Ты можешь оттянуть раковину (умывальник)?
+Do you know that in Japan people usually sit crossed legged? - Ты знаешь, что в Японии люди обычно сидят скрестив ноги?
+Do you need to change (clothes) ? - Тебе нужно переодеться?
+Why are you in a hurry? - Зачем ты спешишь?
+DO you have a package for me? - У тебя есть пакет для меня?
+What are they for? - Для чего они?
+What impact did this have? - Какой это имело эффект?
+What has really happened to the price of fish? - Что действительно произошло с ценой на рыбу?
+WHY ARE YOU STUDYING ENGLISH?  - 
+WHERE/HOW DID YOU LEARN ENGLISH? - 
+WHAT DO YOU DO IN YOUR FREE TIME? - 
+WHAT’S THE WEATHER LIKE? / HOW’S THE WEATHER? - 
+WHAT TIME IS IT?  - 
+DO YOU NEED ANY HELP? - 
+CAN I HELP YOU? - 
+HOW’S IT GOING? - 
+HOW ARE YOU FEELING? - 
+
+
+
+$7
+
+
+huge - very big
+tiny - very small
+brilliant - very clever
+awful, terrible, disgusting - very bad
+certain - very sure
+excellent - perfect - ideal - splendid - very good
+delicious - very taste
+
+
+$8
