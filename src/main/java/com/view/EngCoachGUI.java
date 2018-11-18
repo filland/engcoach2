@@ -29,7 +29,7 @@ import javax.swing.JTextField;
 import javax.swing.UIManager;
 
 import com.services.Utility;
-import com.services.Word;
+import com.services.TranscriptionService;
 import com.model.EngCoach;
 
 
@@ -276,7 +276,7 @@ public class EngCoachGUI extends JFrame implements ActionListener, ItemListener,
 				transcryptIsSet=true;
 				transcryptField.setText("");
 			} else {
-				transcryptField.setText(Word.getTranscription(eng.getEnglishWord()));
+				transcryptField.setText(TranscriptionService.getTranscription(eng.getEnglishWord()));
 				transcryptIsSet=false;
 			}
 		}	

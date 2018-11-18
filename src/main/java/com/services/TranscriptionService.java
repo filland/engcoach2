@@ -8,9 +8,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-public class Word {
-	
-	
+/**
+ *
+ * This service is responsible for
+ * providing transcription of a english
+ * word
+ *
+ */
+public class TranscriptionService {
+
 	private static Properties prop;
     private static Map<String, String> wordsTrans;
 
@@ -44,7 +50,7 @@ public class Word {
 	}
 	public static void setPathToTrascriptionSymbols(
 			String pathToTrascriptionSymbols) {
-		Word.pathToTrascriptionSymbols = pathToTrascriptionSymbols;
+		TranscriptionService.pathToTrascriptionSymbols = pathToTrascriptionSymbols;
 	}
 
 
@@ -52,7 +58,7 @@ public class Word {
 		return pathToDictionary;
 	}
 	public static void setPathToDictionary(String pathToDictionary) {
-		Word.pathToDictionary = pathToDictionary;
+		TranscriptionService.pathToDictionary = pathToDictionary;
 	}
 
 

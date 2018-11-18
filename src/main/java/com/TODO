@@ -3,7 +3,8 @@
 Agenda: - more MVC ! (decent model for engcoach)
 
 TODO:
-- logging
+- implement EngCoach2Controller
+- add logger to EngCoach2Controller
 - decoupling
 - more domain objects like (Word, Sentence)
 - add database (MongoDB or SQLite)
