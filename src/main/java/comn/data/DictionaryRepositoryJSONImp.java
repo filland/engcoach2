@@ -1,16 +1,24 @@
-package com.newModel;
+package comn.data;
 
 import com.google.gson.Gson;
-import com.newModel.domain.DictionaryRecord;
+import comn.model.domain.DictionaryRecord;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
+import static comn.utils.JSONUtils.createBackup;
+
+/**
+ * Using text file with jsons as a source
+ */
 public class DictionaryRepositoryJSONImp implements DictionaryRepository {
 
     private final String pathToFileWithJSONs;
@@ -23,19 +31,14 @@ public class DictionaryRepositoryJSONImp implements DictionaryRepository {
         this.pathToFileWithJSONs = pathToFileWithJSONs;
     }
 
-    public void readFile() throws IOException {
+    public void loadJSONs() throws IOException {
 
         // create backup
-        String nameWithoutExtension = pathToFileWithJSONs.split(".json")[0];
-        Files.copy(
-                new File(pathToFileWithJSONs).toPath(),
-                new File(nameWithoutExtension+"_"+new SimpleDateFormat("yyyy-MM-dd_hh-mm-ss").format(new Date())+".json").toPath()
-        );
+        createBackup(pathToFileWithJSONs);
 
         byte[] bytes = Files.readAllBytes(new File(pathToFileWithJSONs).toPath());
 
         String jsons = new String(bytes, StandardCharsets.UTF_8);
-
 
 
         if (!jsons.trim().isEmpty()) {
@@ -46,8 +49,8 @@ public class DictionaryRepositoryJSONImp implements DictionaryRepository {
 
             Collections.sort(dictionaryRecords);
 
-            System.out.println("last id " + this.dictionaryRecords.get(dictionaryRecords.size()-1).getId());
-            lastID = this.dictionaryRecords.get(dictionaryRecords.size()-1).getId();
+            System.out.println("last id " + this.dictionaryRecords.get(dictionaryRecords.size() - 1).getId());
+            lastID = this.dictionaryRecords.get(dictionaryRecords.size() - 1).getId();
         } else {
 
             dictionaryRecords = new ArrayList<>();
@@ -103,7 +106,7 @@ public class DictionaryRepositoryJSONImp implements DictionaryRepository {
 
         int recordIndexInList = Collections.binarySearch(dictionaryRecords, record);
 
-        if (recordIndexInList == -1){
+        if (recordIndexInList == -1) {
 
             return false;
 
@@ -121,7 +124,7 @@ public class DictionaryRepositoryJSONImp implements DictionaryRepository {
 
         int recordIndexInList = Collections.binarySearch(dictionaryRecords, record);
 
-        if (recordIndexInList == -1){
+        if (recordIndexInList == -1) {
 
             return false;
 

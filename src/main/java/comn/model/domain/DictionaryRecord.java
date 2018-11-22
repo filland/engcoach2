@@ -1,16 +1,14 @@
-package com.newModel.domain;
+package comn.model.domain;
 
 import java.util.Objects;
 
 /**
- *
  * A record from dictionary. It can be a word,
  * a phrase or a sentence
- *
  */
 public class DictionaryRecord implements Comparable<DictionaryRecord> {
 
-    public enum DictRecType{
+    public enum DictRecType {
         WORD("word"),
         SENTENCE("sentence"),
         PHRASE("phrase");
@@ -28,6 +26,10 @@ public class DictionaryRecord implements Comparable<DictionaryRecord> {
     }
 
     private long id;
+
+    /**
+     * User himself chooses what will be stored in this field
+     */
     private String category;
     private DictRecType type;
     private String original;
@@ -64,6 +66,9 @@ public class DictionaryRecord implements Comparable<DictionaryRecord> {
         return translation;
     }
 
+    /**
+     * From smallest to biggest
+     */
     @Override
     public int compareTo(DictionaryRecord record) {
 

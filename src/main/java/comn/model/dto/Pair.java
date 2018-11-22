@@ -1,4 +1,4 @@
-package com.newModel.dto;
+package comn.model.dto;
 
 /**
  *

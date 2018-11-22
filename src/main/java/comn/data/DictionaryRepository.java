@@ -1,6 +1,6 @@
-package com.newModel;
+package comn.data;
 
-import com.newModel.domain.DictionaryRecord;
+import comn.model.domain.DictionaryRecord;
 
 import java.util.List;
 
