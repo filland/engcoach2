@@ -12,14 +12,14 @@ import java.util.List;
  *
  * Info:
  * Transcription of words are encoded using a language
- * (for examp: the word HELLO has the following transcription HH AH0 L OW1 )
+ * (for example: the word HELLO has the following transcription HH AH0 L OW1 )
  *
  * This repository allows to read a table with mapping (encoded
  * transcription = readable transcription)
  *
  *
  *
- * @note This repo does not contain create/update/delete methods as dictionary
+ * @note This repo does not contain create/update/delete methods as the dictionary
  * is completed so no modification is needed
  *
  */
