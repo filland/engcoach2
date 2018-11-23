@@ -4,6 +4,9 @@ import comn.model.domain.DictionaryRecord;
 
 import java.util.List;
 
+/**
+ * Provides access to the custom-made dictionary
+ */
 public interface DictionaryRepository {
 
     DictionaryRecord findById(long id);

@@ -1,9 +1,9 @@
 package comn.model;
 
-import com.services.TranscriptionService;
 import comn.data.DictionaryRepository;
 import comn.model.domain.DictionaryRecord;
 import comn.model.dto.Pair;
+import comn.model.services.TranscriptionService;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -40,6 +40,7 @@ public class EngCoach2Model {
     /**
      * temporary fields
      */
+    private DictionaryRecord currentRecord;
     private TranslationOrder currentOrder;
     private DictionaryRecord.DictRecType type;
     private String category;
@@ -125,15 +126,14 @@ public class EngCoach2Model {
 
     public String getTranscription() {
 
-        // TODO !!!
-        throw new RuntimeException();
-
+        return transcriptionService.getTranscription(currentRecord.getOriginal());
     }
 
     /**
      * Returns random record. Filters can be applied
      */
     // TODO since the method is using streams Cant we place filters somewhere else ?
+    // TODO UPD seems like "make this method less coupled"
     private DictionaryRecord getRandomRecord() {
 
         DictionaryRecord randomRecord;
@@ -180,6 +180,8 @@ public class EngCoach2Model {
 
         }
 
+        currentRecord = randomRecord;
+
         addToRecentRecords(randomRecord);
 
         return randomRecord;
@@ -187,7 +189,7 @@ public class EngCoach2Model {
 
     private boolean isInRecentlyShownRecords(DictionaryRecord record) {
 
-        return Collections.binarySearch(this.recentlyShownRecords, record) != -1;
+        return Collections.binarySearch(recentlyShownRecords, record) != -1;
     }
 
     private void addToRecentRecords(DictionaryRecord record) {

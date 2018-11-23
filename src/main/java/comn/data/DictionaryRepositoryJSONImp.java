@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-import static comn.utils.JSONUtils.createBackup;
+import static comn.model.utils.JSONUtils.createBackupJSONFile;
 
 /**
  * Using text file with jsons as a source
@@ -34,7 +34,7 @@ public class DictionaryRepositoryJSONImp implements DictionaryRepository {
     public void loadJSONs() throws IOException {
 
         // create backup
-        createBackup(pathToFileWithJSONs);
+        createBackupJSONFile(pathToFileWithJSONs);
 
         byte[] bytes = Files.readAllBytes(new File(pathToFileWithJSONs).toPath());
 
@@ -49,7 +49,7 @@ public class DictionaryRepositoryJSONImp implements DictionaryRepository {
 
             Collections.sort(dictionaryRecords);
 
-            System.out.println("last id " + this.dictionaryRecords.get(dictionaryRecords.size() - 1).getId());
+            System.out.println("first id " + this.dictionaryRecords.get(0).getId());
             lastID = this.dictionaryRecords.get(dictionaryRecords.size() - 1).getId();
         } else {
 

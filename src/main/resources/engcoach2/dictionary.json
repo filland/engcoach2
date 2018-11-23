@@ -1,0 +1,149 @@
+[
+  {
+    "id": 0,
+    "category": "mine",
+    "type": "WORD",
+    "original": "cat",
+    "translation": "кот"
+  },
+  {
+    "id": 1,
+    "category": "mine",
+    "type": "WORD",
+    "original": "dog",
+    "translation": "собака"
+  },
+  {
+    "id": 2,
+    "category": "mine",
+    "type": "WORD",
+    "original": "car",
+    "translation": "машина"
+  },
+  {
+    "id": 3,
+    "category": "mine",
+    "type": "WORD",
+    "original": "cat",
+    "translation": "кот"
+  },
+  {
+    "id": 4,
+    "category": "mine",
+    "type": "WORD",
+    "original": "dog",
+    "translation": "собака"
+  },
+  {
+    "id": 5,
+    "category": "mine",
+    "type": "WORD",
+    "original": "car",
+    "translation": "машина"
+  },
+  {
+    "id": 6,
+    "category": "mine",
+    "type": "WORD",
+    "original": "cat",
+    "translation": "кот"
+  },
+  {
+    "id": 7,
+    "category": "mine",
+    "type": "WORD",
+    "original": "dog",
+    "translation": "собака"
+  },
+  {
+    "id": 8,
+    "category": "mine",
+    "type": "WORD",
+    "original": "car",
+    "translation": "машина"
+  },
+  {
+    "id": 9,
+    "category": "mine",
+    "type": "WORD",
+    "original": "cat",
+    "translation": "кот"
+  },
+  {
+    "id": 10,
+    "category": "mine",
+    "type": "WORD",
+    "original": "dog",
+    "translation": "собака"
+  },
+  {
+    "id": 11,
+    "category": "mine",
+    "type": "WORD",
+    "original": "car",
+    "translation": "машина"
+  },
+  {
+    "id": 12,
+    "category": "mine",
+    "type": "WORD",
+    "original": "cat",
+    "translation": "кот"
+  },
+  {
+    "id": 13,
+    "category": "mine",
+    "type": "WORD",
+    "original": "dog",
+    "translation": "собака"
+  },
+  {
+    "id": 14,
+    "category": "mine",
+    "type": "WORD",
+    "original": "car",
+    "translation": "машина"
+  },
+  {
+    "id": 15,
+    "category": "mine",
+    "type": "WORD",
+    "original": "cat",
+    "translation": "кот"
+  },
+  {
+    "id": 16,
+    "category": "mine",
+    "type": "WORD",
+    "original": "dog",
+    "translation": "собака"
+  },
+  {
+    "id": 17,
+    "category": "mine",
+    "type": "WORD",
+    "original": "car",
+    "translation": "машина"
+  },
+  {
+    "id": 18,
+    "category": "mine",
+    "type": "WORD",
+    "original": "cat",
+    "translation": "кот"
+  },
+  {
+    "id": 19,
+    "category": "mine",
+    "type": "WORD",
+    "original": "dog",
+    "translation": "собака"
+  },
+  {
+    "id": 20,
+    "category": "mine",
+    "type": "WORD",
+    "original": "car",
+    "translation": "машина"
+  }
+]

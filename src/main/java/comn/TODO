@@ -1,9 +1,9 @@
 
 
-Agenda: - refactor TranscriptionService
+Agenda:
 
 TODO:
-- convert transcription into jsons
+- draw a schema that explains interaction of dictionaries
 - implement EngCoach2Controller
 - add logger to EngCoach2Controller
 - decoupling
@@ -14,3 +14,5 @@ TODO:
 
 
 Done:
+- refactor TranscriptionService
+- convert transcription into jsons
