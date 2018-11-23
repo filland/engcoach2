@@ -1,18 +1,23 @@
 
 
-Agenda:
+Agenda: - draw a schema that explains interaction of dictionaries
 
 TODO:
-- draw a schema that explains interaction of dictionaries
+- create frame for engcoach2model with javafx
 - implement EngCoach2Controller
 - add logger to EngCoach2Controller
-- decoupling
-- add database (MongoDB or SQLite)
+- implement transcription for phrases
+- implement transcription for sentences
+- engcoach2model.getRandomRecord() вынести фильтры!
+- what will happen with dictionaryRecord's ids what i add a new sentence
+to one of the categories ??? Maybe we do not need them (ids) ?
 - add feature for playing pronunciation of words via third-party services
 - app for android
-- Expand the check array -> save words not only from one train but from lets say 5 trains.
+- add database (MongoDB or SQLite)
 
 
 Done:
 - refactor TranscriptionService
 - convert transcription into jsons
+- Expand the check array -> save words not only
+from one train but from lets say 5 trains. - now the app caches up to 500 records

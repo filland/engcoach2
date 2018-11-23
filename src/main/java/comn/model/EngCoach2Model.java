@@ -25,8 +25,9 @@ public class EngCoach2Model {
 
     public enum TranslationOrder {
         FROM_ORIGIN_TO_TRANSLATION,
-        FROM_TRANSLATION_TO_ORIGIN
+        FROM_TRANSLATION_TO_ORIGIN;
     }
+
 
     /**
      * dependencies
@@ -51,11 +52,12 @@ public class EngCoach2Model {
      * temporary fields
      */
 
+    // specifies max number of cached recently shown records
+    private static final int MAX_NUMBER_OF_CACHED_DICTIONARY_RECORDS = 500;
     /**
      * List of records that were used recently
      */
     private List<DictionaryRecord> recentlyShownRecords;
-
 
     public EngCoach2Model(DictionaryRepository dictionary, TranscriptionService transcriptionService) {
         this.dictionary = dictionary;
@@ -64,6 +66,7 @@ public class EngCoach2Model {
         currentOrder = TranslationOrder.FROM_ORIGIN_TO_TRANSLATION;
         type = null;
         category = null;
+        filteredRecords = null;
 
         recentlyShownRecords = new ArrayList<>();
     }
@@ -111,7 +114,7 @@ public class EngCoach2Model {
 
         DictionaryRecord randomRecord = getRandomRecord();
 
-        System.out.println("random record = " + randomRecord);
+//        System.out.println("random record = " + randomRecord);
 
         if (currentOrder == TranslationOrder.FROM_ORIGIN_TO_TRANSLATION) {
 
@@ -146,11 +149,28 @@ public class EngCoach2Model {
                 // find records that suits the filters
                 filteredRecords = dictionary.findAll()
                         .stream()
-                        .filter(record -> record.getType() == type)
-                        .filter(record -> record.getCategory().equals(category))
+                        .filter(record -> {
+
+                            if (type != null){
+
+                                return record.getType() == type;
+                            } else {
+                                return true;
+                            }
+
+                        })
+                        .filter(record -> {
+
+                            if (category != null){
+
+                                return record.getCategory().equals(category);
+                            } else {
+                                return true;
+                            }
+
+                        })
                         .collect(Collectors.toList());
             }
-
 
             // keep generating random number until getting the record that was not used yet
             do {
@@ -196,13 +216,12 @@ public class EngCoach2Model {
 
         Objects.requireNonNull(record);
 
-        if (recentlyShownRecords.size() == 500) {
-
-            recentlyShownRecords.add(record);
-
-        } else {
-            recentlyShownRecords.add(record);
+        if (recentlyShownRecords.size() == MAX_NUMBER_OF_CACHED_DICTIONARY_RECORDS) {
+            recentlyShownRecords.clear();
         }
+
+
+        recentlyShownRecords.add(record);
 
         Collections.sort(recentlyShownRecords);
     }

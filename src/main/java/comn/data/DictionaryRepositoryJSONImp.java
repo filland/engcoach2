@@ -49,7 +49,7 @@ public class DictionaryRepositoryJSONImp implements DictionaryRepository {
 
             Collections.sort(dictionaryRecords);
 
-            System.out.println("first id " + this.dictionaryRecords.get(0).getId());
+//            System.out.println("first id " + this.dictionaryRecords.get(0).getId());
             lastID = this.dictionaryRecords.get(dictionaryRecords.size() - 1).getId();
         } else {
 

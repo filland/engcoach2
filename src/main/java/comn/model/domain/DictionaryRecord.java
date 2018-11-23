@@ -11,7 +11,8 @@ public class DictionaryRecord implements Comparable<DictionaryRecord> {
     public enum DictRecType {
         WORD("word"),
         SENTENCE("sentence"),
-        PHRASE("phrase");
+        PHRASE("phrase"),
+        MIXED("mixed");
 
         private final String typeName;
 
@@ -34,6 +35,9 @@ public class DictionaryRecord implements Comparable<DictionaryRecord> {
     private DictRecType type;
     private String original;
     private String translation;
+
+    public DictionaryRecord() {
+    }
 
     public DictionaryRecord(String category, DictRecType type, String original, String translation) {
         this.category = category;

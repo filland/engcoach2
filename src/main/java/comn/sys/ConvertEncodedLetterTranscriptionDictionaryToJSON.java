@@ -37,12 +37,12 @@ public class ConvertEncodedLetterTranscriptionDictionaryToJSON {
 
                 records.add(new LetterTranscriptionRecord(sys[0].trim(), sys[1].trim()));
 
-                Files.write(
-                        new File("decoded_letters_transcriptions.json").toPath(),
-                        new Gson().toJson(records).getBytes()
-                );
-
             }
+
+            Files.write(
+                    new File("decoded_letters_transcriptions.json").toPath(),
+                    new Gson().toJson(records).getBytes()
+            );
 
         }
         // =============================

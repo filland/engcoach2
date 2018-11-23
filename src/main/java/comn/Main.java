@@ -1,10 +1,9 @@
-package comn.model;
+package comn;
 
-import comn.ProjectProperties;
-import comn.data.DictionaryRepository;
 import comn.data.DictionaryRepositoryJSONImp;
 import comn.data.ELTDictionaryRepositoryJSONImp;
 import comn.data.TranscriptionDictRepJSONImp;
+import comn.model.EngCoach2Model;
 import comn.model.domain.DictionaryRecord;
 import comn.model.services.TranscriptionService;
 
@@ -30,16 +29,18 @@ public class Main {
         EngCoach2Model engCoach2 = new EngCoach2Model(dictionaryRepository, transcriptionService);
 
         engCoach2.setOrder(EngCoach2Model.TranslationOrder.FROM_TRANSLATION_TO_ORIGIN);
-        engCoach2.setCategory("mine");
+//        engCoach2.setCategory("sentences, collected by me");
         engCoach2.setType(DictionaryRecord.DictRecType.WORD);
 
-        for (int i = 0; i < 3; i++) {
+        System.out.println("Get random records:");
+        for (int i = 0; i < 5; i++) {
 
             System.out.println(engCoach2.getPair());
             System.out.println(engCoach2.getTranscription());
 
         }
 
+        System.out.println("\nRecently shown records:");
         engCoach2.showRecentlyShownRecords();
 
     }
