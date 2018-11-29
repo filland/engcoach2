@@ -13,9 +13,12 @@ public class Pair {
     // and then show this one
     private String second;
 
-    public Pair(String first, String second) {
+    private String transcription;
+
+    public Pair(String first, String second, String transcription) {
         this.first = first;
         this.second = second;
+        this.transcription = transcription;
     }
 
     public String getFirst() {
@@ -26,11 +29,16 @@ public class Pair {
         return second;
     }
 
+    public String getTranscription() {
+        return transcription;
+    }
+
     @Override
     public String toString() {
         return "Pair{" +
                 "first='" + first + '\'' +
                 ", second='" + second + '\'' +
+                ", transcription='" + transcription + '\'' +
                 '}';
     }
 }

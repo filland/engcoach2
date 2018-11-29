@@ -6,10 +6,10 @@ import comn.model.dto.Pair;
 import comn.model.services.TranscriptionService;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.Random;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 /**
@@ -23,9 +23,21 @@ import java.util.stream.Collectors;
  */
 public class EngCoach2Model {
 
+    private final Random random = new Random();
+
     public enum TranslationOrder {
-        FROM_ORIGIN_TO_TRANSLATION,
-        FROM_TRANSLATION_TO_ORIGIN;
+        FROM_ORIGIN_TO_TRANSLATION(1),
+        FROM_TRANSLATION_TO_ORIGIN(2);
+
+        private int order;
+
+        TranslationOrder(int _order) {
+            order = _order;
+        }
+
+        public int getOrder() {
+            return order;
+        }
     }
 
 
@@ -48,6 +60,9 @@ public class EngCoach2Model {
 
     // this list is used to cache records that match by type and category
     private List<DictionaryRecord> filteredRecords;
+
+    private Predicate<DictionaryRecord> filterByType;
+    private Predicate<DictionaryRecord> filterByCategory;
     /**
      * temporary fields
      */
@@ -59,7 +74,9 @@ public class EngCoach2Model {
      */
     private List<DictionaryRecord> recentlyShownRecords;
 
-    public EngCoach2Model(DictionaryRepository dictionary, TranscriptionService transcriptionService) {
+    public EngCoach2Model(DictionaryRepository dictionary,
+                          TranscriptionService transcriptionService) {
+
         this.dictionary = dictionary;
         this.transcriptionService = transcriptionService;
 
@@ -67,6 +84,28 @@ public class EngCoach2Model {
         type = null;
         category = null;
         filteredRecords = null;
+
+        filterByType = record -> {
+
+            if (type != null){
+
+                return record.getType() == type;
+            } else {
+                return true;
+            }
+
+        };
+
+        filterByCategory = record -> {
+
+            if (category != null){
+
+                return record.getCategory().equals(category);
+            } else {
+                return true;
+            }
+
+        };
 
         recentlyShownRecords = new ArrayList<>();
     }
@@ -96,12 +135,15 @@ public class EngCoach2Model {
 
         Objects.requireNonNull(type);
 
+        filteredRecords = null;
         this.type = type;
     }
 
     public void setCategory(String category) {
 
         Objects.requireNonNull(category);
+
+        filteredRecords = null;
         this.category = category;
     }
 
@@ -112,22 +154,31 @@ public class EngCoach2Model {
      */
     public Pair getPair() {
 
-        DictionaryRecord randomRecord = getRandomRecord();
+        currentRecord = getRandomRecord();
 
-//        System.out.println("random record = " + randomRecord);
+//        System.out.println("random record = " + currentRecord);
+
+        if (currentRecord == null){
+            return null;
+        }
 
         if (currentOrder == TranslationOrder.FROM_ORIGIN_TO_TRANSLATION) {
 
-            return new Pair(randomRecord.getOriginal(), randomRecord.getTranslation());
+            return new Pair(
+                    currentRecord.getOriginal(),
+                    currentRecord.getTranslation(),
+                    transcriptionService.getTranscription(currentRecord.getOriginal()));
 
         } else {
 
-            return new Pair(randomRecord.getTranslation(), randomRecord.getOriginal());
-
+            return new Pair(
+                    currentRecord.getTranslation(),
+                    currentRecord.getOriginal(),
+                    transcriptionService.getTranscription(currentRecord.getOriginal()));
         }
     }
 
-    public String getTranscription() {
+    private String getTranscription() {
 
         return transcriptionService.getTranscription(currentRecord.getOriginal());
     }
@@ -135,8 +186,6 @@ public class EngCoach2Model {
     /**
      * Returns random record. Filters can be applied
      */
-    // TODO since the method is using streams Cant we place filters somewhere else ?
-    // TODO UPD seems like "make this method less coupled"
     private DictionaryRecord getRandomRecord() {
 
         DictionaryRecord randomRecord;
@@ -149,35 +198,19 @@ public class EngCoach2Model {
                 // find records that suits the filters
                 filteredRecords = dictionary.findAll()
                         .stream()
-                        .filter(record -> {
-
-                            if (type != null){
-
-                                return record.getType() == type;
-                            } else {
-                                return true;
-                            }
-
-                        })
-                        .filter(record -> {
-
-                            if (category != null){
-
-                                return record.getCategory().equals(category);
-                            } else {
-                                return true;
-                            }
-
-                        })
+                        .filter(filterByType)
+                        .filter(filterByCategory)
                         .collect(Collectors.toList());
+            }
+
+            if (filteredRecords.isEmpty()){
+                return null;
             }
 
             // keep generating random number until getting the record that was not used yet
             do {
 
-                int index = ThreadLocalRandom
-                        .current()
-                        .nextInt(0, filteredRecords.size());
+                int index = random.nextInt(filteredRecords.size());
 
                 randomRecord = filteredRecords.get(index);
 
@@ -189,9 +222,7 @@ public class EngCoach2Model {
             // keep generating random number until getting the record that was not used yet
             do {
 
-                int index = ThreadLocalRandom
-                        .current()
-                        .nextInt(0, dictionary.findAll().size() + 1);
+                int index = random.nextInt(dictionary.findAll().size() );
 
                 randomRecord = dictionary.findAll().get(index);
 
@@ -200,8 +231,6 @@ public class EngCoach2Model {
 
         }
 
-        currentRecord = randomRecord;
-
         addToRecentRecords(randomRecord);
 
         return randomRecord;
@@ -209,7 +238,8 @@ public class EngCoach2Model {
 
     private boolean isInRecentlyShownRecords(DictionaryRecord record) {
 
-        return Collections.binarySearch(recentlyShownRecords, record) != -1;
+//        return Collections.binarySearch(recentlyShownRecords, record) != -1;
+        return recentlyShownRecords.contains(record);
     }
 
     private void addToRecentRecords(DictionaryRecord record) {
@@ -220,12 +250,15 @@ public class EngCoach2Model {
             recentlyShownRecords.clear();
         }
 
-
         recentlyShownRecords.add(record);
 
-        Collections.sort(recentlyShownRecords);
+//        Collections.sort(recentlyShownRecords);
     }
 
+
+    public TranslationOrder getCurrentOrder() {
+        return currentOrder;
+    }
 
     @Deprecated
     public void showRecentlyShownRecords() {

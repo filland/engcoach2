@@ -76,11 +76,7 @@ public class DictionaryRecord implements Comparable<DictionaryRecord> {
     @Override
     public int compareTo(DictionaryRecord record) {
 
-        if (this.getId() == record.getId()) {
-            return 0;
-        }
-
-        return (this.getId() > record.getId()) ? 1 : -1;
+        return (int) (this.getId() - record.getId());
     }
 
     @Override

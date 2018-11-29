@@ -1,47 +1,37 @@
 package comn;
 
-import comn.data.DictionaryRepositoryJSONImp;
-import comn.data.ELTDictionaryRepositoryJSONImp;
-import comn.data.TranscriptionDictRepJSONImp;
-import comn.model.EngCoach2Model;
-import comn.model.domain.DictionaryRecord;
-import comn.model.services.TranscriptionService;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.net.URL;
 
-public class Main {
+public class Main extends Application {
 
-    public static void main(String[] args) throws IOException {
+    private Stage primaryStage;
+    private Parent parent;
 
-        System.setProperty("file.encoding", "UTF-8");
+    @Override
+    public void start(Stage primaryStage) throws Exception {
 
-        ELTDictionaryRepositoryJSONImp eltdRepository = new ELTDictionaryRepositoryJSONImp(ProjectProperties.pathToDecodedLettersTranscriptionsJSON);
-        eltdRepository.loadJSONs();
+        this.primaryStage = primaryStage;
+        this.primaryStage.setTitle("Engcoach 2");
 
-        TranscriptionDictRepJSONImp transcriptDictRepository = new TranscriptionDictRepJSONImp(ProjectProperties.pathToTranscriptionDictionaryJSON);
-        transcriptDictRepository.loadJSONs();
+        URL resource = getClass().getClassLoader().getResource("mainpage.fxml");
 
-        TranscriptionService transcriptionService = new TranscriptionService(transcriptDictRepository, eltdRepository);
+        parent = FXMLLoader.load(resource);
 
-        DictionaryRepositoryJSONImp dictionaryRepository = new DictionaryRepositoryJSONImp(ProjectProperties.pathToDictionaryJSON);
-        dictionaryRepository.loadJSONs();
+        // Show the scene containing the root layout.
+        Scene scene = new Scene(parent);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
 
-        EngCoach2Model engCoach2 = new EngCoach2Model(dictionaryRepository, transcriptionService);
+    public static void main(String[] args) {
 
-        engCoach2.setOrder(EngCoach2Model.TranslationOrder.FROM_TRANSLATION_TO_ORIGIN);
-//        engCoach2.setCategory("sentences, collected by me");
-        engCoach2.setType(DictionaryRecord.DictRecType.WORD);
-
-        System.out.println("Get random records:");
-        for (int i = 0; i < 5; i++) {
-
-            System.out.println(engCoach2.getPair());
-            System.out.println(engCoach2.getTranscription());
-
-        }
-
-        System.out.println("\nRecently shown records:");
-        engCoach2.showRecentlyShownRecords();
+        launch();
 
     }
 }
