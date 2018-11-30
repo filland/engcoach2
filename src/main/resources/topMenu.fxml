@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+
+<MenuBar fx:controller="comn.model.controller.TopMenuController"
+         xmlns:fx="http://javafx.com/fxml">
+    <menus>
+        <Menu mnemonicParsing="false" text="File">
+            <items>
+                <MenuItem mnemonicParsing="false" text="Close"/>
+            </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="translation">
+            <items>
+                <CheckMenuItem fx:id="showTranscriptionMI" mnemonicParsing="false" onAction="#showTranscriptionClicked"
+                               text="show transcription"/>
+                <CheckMenuItem fx:id="reverseTranslationMI" mnemonicParsing="false"
+                               onAction="#reverseTranslationClicked" text="reverse translation"/>
+            </items>
+        </Menu>
+    </menus>
+</MenuBar>

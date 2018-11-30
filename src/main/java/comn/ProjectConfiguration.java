@@ -8,6 +8,11 @@ import comn.model.services.TranscriptionService;
 
 import java.io.IOException;
 
+/**
+ *
+ * This class works as a replacement of Spring Java confi
+ *
+ */
 public class ProjectConfiguration {
 
     private ELTDictionaryRepositoryJSONImp eltdRepository;

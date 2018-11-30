@@ -1,22 +1,24 @@
 
 
-Agenda: - implement MainPageController
+Agenda:
 
 TODO:
+- add feature for playing pronunciation of words via third-party services
 - resize width of window to fit long sentences in the fields
 - add logger to EngCoach2Controller
-- consider Google Guice as DI tool
 - implement transcription for phrases
 - implement transcription for sentences
+- consider Google Guice as DI tool
 
 - what will happen with dictionaryRecord's ids what i add a new sentence
 to one of the categories ??? Maybe we do not need them (ids) ?
-- add feature for playing pronunciation of words via third-party services
 - app for android
 - add database - SQLite
 
 
 Done:
+- event bus to send events between multiply controllers: https://www.youtube.com/watch?v=dHZd7a5_6ck
+- implement MainPageController (first iteration: buttonNext, transcription)
 - create frame for engcoach2model with javafx
 - NPE due to empty filteredRecsList handled
 - engcoach2model.getRandomRecord() вынести фильтры!
