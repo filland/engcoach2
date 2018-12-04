@@ -3,7 +3,7 @@ package comn;
 import comn.data.DictionaryRepositoryJSONImp;
 import comn.data.ELTDictionaryRepositoryJSONImp;
 import comn.data.TranscriptionDictRepJSONImp;
-import comn.model.EngCoach2Model;
+import comn.model.EngCoach2App;
 import comn.model.services.TranscriptionService;
 
 import java.io.IOException;
@@ -19,7 +19,7 @@ public class ProjectConfiguration {
     private TranscriptionDictRepJSONImp transcriptDictRepository;
     private TranscriptionService transcriptionService;
     private DictionaryRepositoryJSONImp dictionaryRepository;
-    private EngCoach2Model engCoach2;
+    private EngCoach2App engCoach2;
 
     private final static ProjectConfiguration configuration = new ProjectConfiguration();
 
@@ -77,11 +77,11 @@ public class ProjectConfiguration {
         return dictionaryRepository;
     }
 
-    public EngCoach2Model getEngCoach2() throws IOException {
+    public EngCoach2App getEngCoach2() throws IOException {
 
         if (engCoach2 == null){
 
-            engCoach2 = new EngCoach2Model(getDictionaryRepository(), getTranscriptionService());
+            engCoach2 = new EngCoach2App(getDictionaryRepository(), getTranscriptionService());
         }
         return engCoach2;
     }

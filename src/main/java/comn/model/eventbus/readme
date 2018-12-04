@@ -5,6 +5,6 @@ EvenBus works on the base of the Observer pattern
 
 Example:
 a button 'show transcription' was clicked. The click is handled in the TopMenuController
-in the showTranscrClicked method. There is one line in that method that
-register an event in EventBus then code of each event handler that was added to the eventBus
+in the showTranscrClicked method. There is one line inside that method that
+registers an event in the EventBus. Then code of each event handler that was added to the eventBus
 is executed. Almost always these event handlers are in other controllers.

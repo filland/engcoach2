@@ -1,7 +1,7 @@
 package comn.model.controller;
 
 import comn.ProjectConfiguration;
-import comn.model.EngCoach2Model;
+import comn.model.EngCoach2App;
 import comn.model.dto.Pair;
 import comn.model.eventbus.AppEvent;
 import comn.model.eventbus.EventBus;
@@ -24,7 +24,7 @@ public class MainPageController {
     private Button nextButton;
 
 
-    private EngCoach2Model engCoach;
+    private EngCoach2App engCoach;
     private EventBus eventBus;
 
 
@@ -98,7 +98,7 @@ public class MainPageController {
     }
 
 
-    public void initShowTranscriptionClickedHandler(){
+    public void initShowTranscriptionClickedHandler() {
 
         eventBus.addEventHandler(AppEvent.SHOW_TRANSCRIPTION_CLICKED, event -> {
 
@@ -115,17 +115,17 @@ public class MainPageController {
 
     }
 
-    public void initReverseTranslationClickedHandler(){
+    public void initReverseTranslationClickedHandler() {
 
         eventBus.addEventHandler(AppEvent.REVERSE_TRANSLATION_CLICKED, event -> {
 
-            if (engCoach.getCurrentOrder() == EngCoach2Model.TranslationOrder.FROM_ORIGIN_TO_TRANSLATION) {
+            if (engCoach.getCurrentOrder() == EngCoach2App.TranslationOrder.FROM_ORIGIN_TO_TRANSLATION) {
 
-                engCoach.setOrder(EngCoach2Model.TranslationOrder.FROM_TRANSLATION_TO_ORIGIN);
+                engCoach.setOrder(EngCoach2App.TranslationOrder.FROM_TRANSLATION_TO_ORIGIN);
 
             } else {
 
-                engCoach.setOrder(EngCoach2Model.TranslationOrder.FROM_ORIGIN_TO_TRANSLATION);
+                engCoach.setOrder(EngCoach2App.TranslationOrder.FROM_ORIGIN_TO_TRANSLATION);
             }
 
         });

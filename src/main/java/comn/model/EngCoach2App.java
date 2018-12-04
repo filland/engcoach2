@@ -15,13 +15,13 @@ import java.util.stream.Collectors;
 /**
  * The class that contains the main logic of the app
  * that is meant to show original and translation
- * of the word by click of the button
- *
+ * of the word on the click of the button
+ * <p>
  * This app provides you a simple and essential service
  * for learning any language: you can rehearse translation
- * of words and learn them in this way.
+ * of words and learn them this way.
  */
-public class EngCoach2Model {
+public class EngCoach2App {
 
     private final Random random = new Random();
 
@@ -74,8 +74,8 @@ public class EngCoach2Model {
      */
     private List<DictionaryRecord> recentlyShownRecords;
 
-    public EngCoach2Model(DictionaryRepository dictionary,
-                          TranscriptionService transcriptionService) {
+    public EngCoach2App(DictionaryRepository dictionary,
+                        TranscriptionService transcriptionService) {
 
         this.dictionary = dictionary;
         this.transcriptionService = transcriptionService;
@@ -87,7 +87,7 @@ public class EngCoach2Model {
 
         filterByType = record -> {
 
-            if (type != null){
+            if (type != null) {
 
                 return record.getType() == type;
             } else {
@@ -98,7 +98,7 @@ public class EngCoach2Model {
 
         filterByCategory = record -> {
 
-            if (category != null){
+            if (category != null) {
 
                 return record.getCategory().equals(category);
             } else {
@@ -131,6 +131,9 @@ public class EngCoach2Model {
         currentOrder = order;
     }
 
+    /**
+     * @param type is the type of the record from the dict to search for
+     */
     public void setType(DictionaryRecord.DictRecType type) {
 
         Objects.requireNonNull(type);
@@ -139,6 +142,9 @@ public class EngCoach2Model {
         this.type = type;
     }
 
+    /**
+     * @param category is the category of the record from the dict to search for
+     */
     public void setCategory(String category) {
 
         Objects.requireNonNull(category);
@@ -158,7 +164,7 @@ public class EngCoach2Model {
 
 //        System.out.println("random record = " + currentRecord);
 
-        if (currentRecord == null){
+        if (currentRecord == null) {
             return null;
         }
 
@@ -203,7 +209,7 @@ public class EngCoach2Model {
                         .collect(Collectors.toList());
             }
 
-            if (filteredRecords.isEmpty()){
+            if (filteredRecords.isEmpty()) {
                 return null;
             }
 
@@ -222,7 +228,7 @@ public class EngCoach2Model {
             // keep generating random number until getting the record that was not used yet
             do {
 
-                int index = random.nextInt(dictionary.findAll().size() );
+                int index = random.nextInt(dictionary.findAll().size());
 
                 randomRecord = dictionary.findAll().get(index);
 
