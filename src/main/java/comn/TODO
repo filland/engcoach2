@@ -5,7 +5,7 @@ Agenda: properties to a file
 TODO:
 - add feature for playing pronunciation of words via third-party services
 - resize width of window to fit long sentences in the fields
-- add logger to EngCoach2Controller
+- add logging
 - implement transcription for phrases
 - implement transcription for sentences
 - consider Google Guice as DI tool
